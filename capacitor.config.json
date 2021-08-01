@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "citi-bank-hackathon",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
