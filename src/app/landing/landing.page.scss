@@ -1,0 +1,23 @@
+ion-content {
+  --ion-background-color: #ffffff;
+}
+
+ion-grid {
+  height: 100%;
+}
+ion-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+}
+
+.cashier-button {
+  --background: #ffffff;
+  color: #004685;
+}
+
+.user-button {
+  --background: #004685;
+  color: #ffffff;
+}
