@@ -1,0 +1,82 @@
+ion-content {
+  --ion-background-color: white;
+}
+
+ion-card-title,
+ion-card-subtitle {
+  font-family: Poppins;
+  font-weight: bold;
+  line-height: 21px;
+}
+
+ion-card-title {
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+ion-card-subtitle {
+  font-size: 16px;
+  padding-bottom: 15px;
+}
+
+span {
+  color: black;
+  text-decoration: underline;
+}
+
+h2 {
+  background-color: #004685;
+  font-family: Poppins;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 30px;
+  color: #ffffff;
+  padding: 5px 15px 1px 15px;
+  border-radius: 5px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.160784);
+  margin-left: 15px;
+}
+
+.citi-logo-header {
+  width: 30%;
+  height: 30%;
+}
+
+.header-text {
+  color: grey;
+}
+
+.header-margin {
+  margin-top: 80px;
+}
+
+.citi-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.voucher {
+  width: 95%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  padding: 0px 20px;
+}
+
+.voucher-blue {
+  --background: #73b5f0;
+}
+
+.voucher-white {
+  --background: white;
+}
+
+.voucher-blue ion-card-subtitle,
+.voucher-blue ion-card-title {
+  color: white;
+}
+
+.voucher-white ion-card-subtitle,
+.voucher-white ion-card-title {
+  color: black;
+}
