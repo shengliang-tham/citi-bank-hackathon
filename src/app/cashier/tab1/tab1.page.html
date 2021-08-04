@@ -1,25 +1,46 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title> Merchants </ion-title>
-  </ion-toolbar>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <!-- <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Merchants</ion-title>
-    </ion-toolbar>
-  </ion-header> -->
-
-  <ion-item>
-    <ion-label>
+<ion-content>
+  <ion-grid>
+    <ion-row class="header-button">
+      <ion-button
+        class="vouchers-button"
+        shape="round"
+        routerLink="/vouchers"
+        routerDirection="root"
+        >vouchers</ion-button
+      >
+    </ion-row>
+    <ion-row class="citi-header header-margin">
       <ion-img
-        width="40"
-        height="40"
-        src="assets/images/lazada-icon.jpg"
+        class="citi-logo-header"
+        src="assets/images/citi_blue-logo.png"
       ></ion-img>
-    </ion-label>
-  </ion-item>
-
-  <!-- <app-explore-container name="Tab 1 page"></app-explore-container> -->
+    </ion-row>
+    <ion-row class="citi-header">
+      <p class="header-text">Home</p>
+    </ion-row>
+    <ion-row>
+      <ion-col size="1"></ion-col>
+      <ion-col size="10">
+        <ion-row class="searchbar">
+          <ion-searchbar placeholder="Search Merchant"></ion-searchbar>
+        </ion-row>
+        <ion-row>
+          <ion-button class="voucher">
+            <ion-icon name="add-outline"></ion-icon>
+          </ion-button>
+          <ion-button class="voucher" *ngFor="let item of filteredData">
+            <p class="voucher-code">{{item}}</p>
+          </ion-button>
+        </ion-row>
+      </ion-col>
+      <ion-col size="1"></ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

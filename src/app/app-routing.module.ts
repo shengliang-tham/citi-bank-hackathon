@@ -17,7 +17,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./cashier/tabs/tabs.module').then((m) => m.TabsPageModule),
   },
-
+  {
+    path: 'vouchers',
+    loadChildren: () =>
+      import('./cashier/vouchers/vouchers.module').then(
+        (m) => m.VouchersPageModule
+      ),
+  },
   {
     path: '',
     redirectTo: 'landing',

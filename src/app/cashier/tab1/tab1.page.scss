@@ -1,0 +1,84 @@
+ion-content {
+  --ion-background-color: #ffffff;
+}
+
+ion-searchbar {
+  --color: black;
+  --placeholder-color: #b3b3b3;
+}
+
+ion-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ion-icon {
+  font-size: 48px;
+  color: #73b5f0;
+  background-color: #ffffff;
+  border-radius: 20px;
+}
+
+ion-list {
+  --ion-background-color: #ffffff;
+}
+
+.header-button {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.vouchers-button {
+  --background: #004685;
+  color: #ffffff;
+}
+
+.citi-logo-header {
+  width: 30%;
+  height: 30%;
+}
+
+.header-text {
+  color: grey;
+}
+
+.header-margin {
+  margin-top: 80px;
+}
+
+.citi-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.voucher {
+  width: 45%;
+  height: 140px;
+  --background: #73b5f0;
+  --box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  --border-radius: 18px;
+  margin: 20px auto 10px auto;
+}
+
+.voucher-code {
+  color: #ffffff;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 21px;
+  text-transform: uppercase;
+}
+
+.merchant-logo {
+  width: 70%;
+}
