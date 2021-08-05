@@ -2,6 +2,49 @@ ion-content {
   --ion-background-color: #ffffff;
 }
 
+ion-card {
+  --background: #004685;
+  width: 20%;
+  position: absolute;
+  right: 30px;
+}
+
+ion-card-title {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 21px;
+  text-align: center;
+  color: #ffffff;
+  padding-top: 15px;
+}
+
+ion-card-subtitle {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 21px;
+  text-align: center;
+  color: #ffffff;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  background-color: #004685;
+  font-family: Poppins;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 30px;
+  color: #ffffff;
+  padding: 5px 15px 1px 15px;
+  border-radius: 5px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.160784);
+  margin-left: 15px;
+}
+
 .citi-logo-header {
   width: 30%;
   height: 30%;
