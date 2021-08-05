@@ -19,6 +19,4 @@ import { Tab2PageRoutingModule } from './tab2-routing.module';
   ],
   declarations: [Tab2Page, Tab2OverviewPage],
 })
-export class Tab2PageModule {
-  locationCards = [0, 1, 2, 3, 4, 5, 6];
-}
+export class Tab2PageModule {}

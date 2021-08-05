@@ -6,11 +6,8 @@ import { Tab2OverviewPage } from './tab2-overview/tab2.page';
 const routes: Routes = [
   {
     path: '',
-    component: Tab2Page,
-  },
-  {
-    path: '/tab2/details',
-    component: Tab2Page,
+    component: Tab2OverviewPage,
+    children: [],
   },
 ];
 
