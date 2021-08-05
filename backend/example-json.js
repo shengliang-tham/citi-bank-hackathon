@@ -83,6 +83,7 @@ exports.array = [
         loyaltyPoints: 25,
       },
     ],
+
   },
   {
     type: "merchant",
@@ -101,6 +102,7 @@ exports.array = [
         totalRemaining: 150,
         price: 15,
         loyaltyPoints: 15,
+        expiryDate: "3/8/21 03:43PM"
       },
       {
         voucherName: "Mango Day 15% Off",
@@ -111,6 +113,7 @@ exports.array = [
         totalRemaining: 150,
         price: 20,
         loyaltyPoints: 20,
+        expiryDate: "3/8/21 03:43PM"
       },
       {
         voucherName: "Ladies Day 15% Off",
@@ -121,8 +124,15 @@ exports.array = [
         totalRemaining: 150,
         price: 25,
         loyaltyPoints: 25,
+        expiryDate: "3/8/21 03:43PM"
       },
     ],
+    locations: [
+      {name: "IMM #06-20", imgUrl: "assets/images/merchant-fila-imm-outlet.jpeg"},
+      {name: "Jurong #01-20", imgUrl: "assets/images/merchant-fila-imm-outlet.jpeg"},
+      {name: "Punggol #05-20", imgUrl: "assets/images/merchant-fila-imm-outlet.jpeg"},
+      {name: "Lakeside #10-22", imgUrl: "assets/images/merchant-fila-imm-outlet.jpeg"}
+    ]
   },
   {
     type: "merchant",
