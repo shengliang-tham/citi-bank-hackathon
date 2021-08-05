@@ -1,25 +1,43 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ViewWillEnter } from '@ionic/angular';
+import { AllServicesService } from '../../services/all-services.service';
 
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss'],
 })
-export class Tab1Page {
+export class Tab1Page implements OnInit, ViewWillEnter {
   items: string[];
   filteredData: string[];
 
-  constructor() {}
+  constructor(private _service: AllServicesService) {}
+
+  brandName = '';
+
+  ngOnInit() {
+    this.brandName = this._service.brandName;
+  }
 
   ionViewWillEnter() {
-    this.items = ['ndp15', 'scp30', 'ndp30', 'ndwnd', 'nend'];
     this.filteredData = this.items;
+    this._service.getMerchants().subscribe((response) => {
+      this.items = [];
+      let list = response;
+      for (let i = 0; i < list.length; i++) {
+        if (list[i].brandName === this.brandName) {
+          for (let voucher of list[i].vouchers)
+            this.items.push(voucher.voucherCode);
+        }
+      }
+      this.filteredData = this.items;
+    });
 
     // searchbar.addEventListener('ionInput', this.handleInput);
   }
 
   handleInput(event) {
-    const query = event.target.value.toLowerCase();
+    const query = event.target.value.toUpperCase();
     // console.log(query);
 
     if (query !== '') {
