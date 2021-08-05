@@ -25,25 +25,48 @@ export class Tab2Page {
     });
   }
 
+  // ionViewDidEnter() {
+  //   const json = {
+  //     voucherName: 'National Day 15% Off',
+  //     voucherCode: 'NDP15',
+  //     redemptionDate: '3/8/21 03:43PM',
+  //     redemptionLocation: 'IMM',
+  //     totalCount: 150,
+  //     totalRemaining: 150,
+  //     price: 15,
+  //     loyaltyPoints: 15,
+  //   };
+  //   this.allServices.redeemVoucher(json).subscribe((data) => {
+  //     // this.presentToast();
+  //   });
+  // }
+
   scanBar() {
     this.barcodeScanner
       .scan()
       .then((barcodeData) => {
-        alert('Barcode data ' + JSON.stringify(barcodeData));
-        this.scannedData = barcodeData;
+        // alert('Barcode data ' + JSON.stringify(barcodeData));
+        this.scannedData = {
+          voucherName: 'National Day 15% Off',
+          voucherCode: 'NDP15',
+          redemptionDate: '3/8/21 03:43PM',
+          redemptionLocation: 'IMM',
+          totalCount: 150,
+          totalRemaining: 150,
+          price: 15,
+          loyaltyPoints: 15,
+        };
 
-        // const tempObject = {
-        //   merchantId: '610ac73a668ee57652a8af78',
-        //   voucherName: 'National Day 15% Off',
-        // };
-        this.allServices.redeemVoucher(this.scannedData).subscribe((data) => {
-          console.log();
-
-          alert(data);
-          this.presentToast();
-        });
+        this.allServices.redeemVoucher(this.scannedData).subscribe(
+          (data) => {
+            alert(data);
+            this.presentToast();
+          },
+          (error) => alert(error)
+        );
       })
       .catch((err) => {
+        alert(err);
         console.log('Error', err);
       });
   }

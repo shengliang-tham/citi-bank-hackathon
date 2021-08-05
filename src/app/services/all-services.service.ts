@@ -15,8 +15,8 @@ export class User {
   providedIn: 'root',
 })
 export class AllServicesService {
-  endpoint = 'http://localhost:3000/';
-
+  // endpoint = 'http://localhost:3000/';
+  endpoint = "https://citi-bank-hackathon.loca.lt/";
   brandName = 'FILA';
 
   httpOptions = {

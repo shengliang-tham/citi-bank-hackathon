@@ -31,6 +31,7 @@ app.listen(port, () => {
     })
 
     app.post('/redeem-voucher', async (req, res) => {
+      console.log(req.body)
       await db.collection('users').updateOne({ brandName: "FILA", "vouchers.voucherCode": req.body.voucherCode }, { $inc: { "vouchers.$.totalRemaining": -1, } })
       await db.collection('users').updateOne({ "type": "customer" }, { $inc: { loyaltyPoints: req.body.loyaltyPoints } })
       res.json({
