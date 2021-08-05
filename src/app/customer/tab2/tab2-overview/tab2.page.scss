@@ -1,0 +1,55 @@
+ion-content {
+  --ion-background-color: #ffffff;
+}
+
+ion-searchbar {
+  --color: #000000;
+  --placeholder-color: #b3b3b3;
+}
+
+ion-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.citi-logo-header {
+  width: 30%;
+  height: 30%;
+}
+
+.header-text {
+  color: grey;
+}
+
+.header-margin {
+  margin-top: 80px;
+}
+
+.citi-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.merchant {
+  width: 95%;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  --background: #73b5f0;
+  --box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  --border-radius: 18px;
+  margin: 20px auto 10px auto;
+}
+
+.merchant-logo {
+  width: 70%;
+}

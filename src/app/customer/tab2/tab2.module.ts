@@ -3,7 +3,8 @@ import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Tab2Page } from './tab2.page';
+import { Tab2Page } from './tab2-details/tab2.page';
+import { Tab2OverviewPage } from './tab2-overview/tab2.page';
 import { ExploreContainerComponentModule } from '../../explore-container/explore-container.module';
 
 import { Tab2PageRoutingModule } from './tab2-routing.module';
@@ -16,8 +17,6 @@ import { Tab2PageRoutingModule } from './tab2-routing.module';
     ExploreContainerComponentModule,
     Tab2PageRoutingModule,
   ],
-  declarations: [Tab2Page],
+  declarations: [Tab2Page, Tab2OverviewPage],
 })
-export class Tab2PageModule {
-  locationCards = [0, 1, 2, 3, 4, 5, 6];
-}
+export class Tab2PageModule {}

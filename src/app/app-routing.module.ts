@@ -43,6 +43,20 @@ const routes: Routes = [
         (m) => m.PurchasePageModule
       ),
   },
+  {
+    path: 'voucher-details',
+    loadChildren: () =>
+      import('./cashier/voucher-details/voucher-details.module').then(
+        (m) => m.VoucherDetailsPageModule
+      ),
+  },
+  {
+    path: 'details',
+    loadChildren: () =>
+      import('./customer/tab2/tab2-details/tab2.module').then(
+        (m) => m.Tab2Module
+      ),
+  },
 ];
 @NgModule({
   imports: [

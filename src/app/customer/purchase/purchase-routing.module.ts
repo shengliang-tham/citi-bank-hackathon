@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: PurchasePage
+  },
+  {
+    path: 'purchase-modal',
+    loadChildren: () => import('./purchase-modal/purchase-modal.module').then( m => m.PurchaseModalPageModule)
   }
 ];
 

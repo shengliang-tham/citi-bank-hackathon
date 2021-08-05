@@ -2,6 +2,98 @@ ion-content {
   --ion-background-color: #ffffff;
 }
 
+ion-card-title {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 21px;
+  text-align: center;
+  color: #ffffff;
+  padding-top: 15px;
+}
+
+ion-card-subtitle {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 21px;
+  text-align: center;
+  color: #ffffff;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  background-color: #004685;
+  font-family: Poppins;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 30px;
+  color: #ffffff;
+  padding: 5px 15px 1px 15px;
+  border-radius: 5px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.160784);
+  margin-left: 15px;
+}
+
+hr {
+  width: 80%;
+  border-top: 2px solid #828282;
+}
+
+.vouchers {
+  display: flex;
+  align-items: center;
+}
+
+.card-blue {
+  background-color: #73b5f0;
+  border-radius: 20px 20px 20px 20px;
+}
+
+.points-card {
+  position: absolute;
+  background-color: #004685;
+  width: 20%;
+  right: 30px;
+}
+
+.location-card {
+  height: 80%;
+  width: 80%;
+}
+
+.location-card-title {
+  color: white;
+  padding-left: 20px;
+  font-weight: 500;
+  font-family: Poppins;
+  font-weight: bold;
+}
+
+.location-card-text {
+  color: white;
+  padding-left: 20px;
+  font-weight: 500;
+  font-family: Poppins;
+  font-weight: bold;
+  padding-bottom: 20px;
+}
+
+.card-img {
+  width: 8vh;
+  height: 8vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .citi-logo-header {
   width: 30%;
   height: 30%;

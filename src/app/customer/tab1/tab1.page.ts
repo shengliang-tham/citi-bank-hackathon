@@ -25,9 +25,10 @@ export class Tab1Page implements ViewWillEnter {
       for (let i = 0; i < list.length; i++) {
         if (list[i].brandName === this._service.brandName) {
           for (let voucher of list[i].vouchers)
-            this.transactionList.push(voucher.voucherCode);
+            this.transactionList.push(voucher);
         }
       }
+      console.log(this.transactionList);
     });
   }
 }

@@ -1,0 +1,40 @@
+ion-content {
+  --ion-background-color: white;
+}
+
+ion-button {
+  width: 100%;
+  margin-top: 10px;
+}
+
+p {
+  color: black;
+  text-align: center;
+}
+
+.voucher-instructions {
+  color: grey;
+  font-size: 1.7rem;
+}
+
+.voucher-title {
+  color: black;
+  font-weight: 700;
+  font-size: 2rem;
+  padding: 20px;
+}
+
+.voucher-description {
+  font-size: 1.3rem;
+}
+
+.voucher-price {
+  color: black;
+  font-weight: 700;
+  font-size: 1.7rem;
+}
+
+.points-earned {
+  margin: 0;
+  padding: 0;
+}

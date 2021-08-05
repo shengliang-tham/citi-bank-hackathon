@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<ion-header>
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
     rel="stylesheet"
@@ -7,15 +7,6 @@
 
 <ion-content>
   <ion-grid>
-    <ion-row class="header-button">
-      <ion-button
-        class="vouchers-button"
-        shape="round"
-        routerLink="/vouchers"
-        routerDirection="root"
-        >vouchers</ion-button
-      >
-    </ion-row>
     <ion-row class="citi-header header-margin">
       <ion-img
         class="citi-logo-header"
@@ -23,28 +14,27 @@
       ></ion-img>
     </ion-row>
     <ion-row class="citi-header">
-      <p class="header-text">Home</p>
+      <p class="header-text">Merchants</p>
     </ion-row>
     <ion-row>
       <ion-col size="1"></ion-col>
       <ion-col size="10">
         <ion-row class="searchbar">
           <ion-searchbar
-            placeholder="Search Voucher Code"
+            placeholder="Search Merchant"
             (ionInput)="handleInput($event)"
           ></ion-searchbar>
         </ion-row>
+        <ion-row></ion-row>
         <ion-row>
-          <ion-button class="voucher">
-            <ion-icon name="add-outline"></ion-icon>
-          </ion-button>
-          <ion-button
-            class="voucher"
-            *ngFor="let item of filteredData"
-            (click)="presentModal()"
-          >
-            <p class="voucher-code">{{item}}</p>
-          </ion-button>
+          <ion-col size="6" *ngFor="let merchant of filteredMerchants">
+            <ion-button class="merchant" (click)="merchantSelected(merchant)">
+              <ion-img
+                class="merchant-logo"
+                src="{{merchant.pictureUrl}}"
+              ></ion-img>
+            </ion-button>
+          </ion-col>
         </ion-row>
       </ion-col>
       <ion-col size="1"></ion-col>
