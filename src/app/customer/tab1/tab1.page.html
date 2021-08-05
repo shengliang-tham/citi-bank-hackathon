@@ -39,7 +39,7 @@
                 <p
                   [ngClass]="{'card-blue-trans-text': i % 2 === 0, 'card-white-trans-text': i % 2 !== 0}"
                 >
-                  {{trans.title}}
+                  {{trans.voucherName}}
                 </p>
                 <br />
                 <p
@@ -50,7 +50,7 @@
                 <p
                   [ngClass]="{'card-blue-trans-text': i % 2 === 0, 'card-white-trans-text': i % 2 !== 0}"
                 >
-                  IMM, 3/8/21 03:43 PM
+                  {{trans.redemptionLocation}}, {{trans.redemptionDate}}
                 </p>
               </div>
             </ion-card-content>
