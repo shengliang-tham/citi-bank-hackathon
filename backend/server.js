@@ -37,10 +37,10 @@ app.listen(port, () => {
       if (merchantId == null || voucherName == null) {
         res.json({ error: "params are null" })
       } else {
-        await db.collection('users').updateOne({ _id: ObjectId(merchantId), "vouchers.voucherName": voucherName }, { $inc: { "vouchers.$.totalRemaining": -1, } })
+        await db.collection('users').updateOne({ brandName: "FILA", "vouchers.voucherName": voucherName }, { $inc: { "vouchers.$.totalRemaining": -1, } })
         await db.collection('users').updateOne({ "type": "customer" }, { $inc: { loyaltyPoints: 100 } })
         res.json({
-          success:true
+          success: true
         })
       }
     })

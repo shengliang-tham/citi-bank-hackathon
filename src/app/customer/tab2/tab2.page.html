@@ -54,7 +54,7 @@
     </ion-row>
     <ion-row>
       <ion-col size="6" *ngFor="let vouch of voucherCards">
-        <ion-card class="card-voucher" (click)="presentModal()">
+        <ion-card class="card-voucher" (click)="presentModal(vouch)">
           <ion-img src="{{vouch.imgUrl}}"> </ion-img>
           <p class="voucher-card-text">
             {{vouch.title}} [{{vouch.points}} pts]
