@@ -39,7 +39,9 @@ app.listen(port, () => {
       } else {
         await db.collection('users').updateOne({ _id: ObjectId(merchantId), "vouchers.voucherName": voucherName }, { $inc: { "vouchers.$.totalRemaining": -1, } })
         await db.collection('users').updateOne({ "type": "customer" }, { $inc: { loyaltyPoints: 100 } })
-        res.sendStatus(200)
+        res.json({
+          success:true
+        })
       }
     })
 

@@ -34,6 +34,15 @@ export class AllServicesService {
       );
   }
 
+  redeemVoucher(detailObject): Observable<any> {
+    return this.httpClient
+      .post<any>(this.endpoint + 'redeem-voucher', detailObject)
+      .pipe(
+        tap((merchants) => console.log('Voucher redeemd!')),
+        catchError(this.handleError<any[]>('Get merchant', []))
+      );
+  }
+
   // createUser(user: User): Observable<any> {
   //   return this.httpClient
   //     .post<User>(this.endpoint, JSON.stringify(user), this.httpOptions)
