@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { IonItemSliding } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab1',
@@ -13,31 +12,31 @@ export class Tab1Page {
   constructor() {}
 
   ionViewWillEnter() {
-    const searchbar = document.querySelector('ion-searchbar');
     this.items = ['ndp15', 'scp30', 'ndp30', 'ndwnd', 'nend'];
     this.filteredData = this.items;
-    console.log(this.items);
-    console.log(this.filteredData);
 
-    searchbar.addEventListener('ionInput', this.handleInput);
+    // searchbar.addEventListener('ionInput', this.handleInput);
   }
 
   handleInput(event) {
-    console.log(event);
-    this.filteredData = this.items;
     const query = event.target.value.toLowerCase();
+    // console.log(query);
 
-    console.log(this.items);
+    if (query !== '') {
+      this.filteredData = [];
+      requestAnimationFrame(() => {
+        this.items.forEach((item) => {
+          const shouldShow = item.indexOf(query) > -1;
 
-    requestAnimationFrame(() => {
-      this.items.forEach((item) => {
-        const shouldShow = item.indexOf(query) > -1;
-
-        if (!shouldShow) {
-          const index = item.indexOf(query);
-          this.filteredData.splice(index, 1);
-        }
+          if (shouldShow) {
+            // const index = item.indexOf(query);
+            // console.log(index);
+            this.filteredData.push(item);
+          }
+        });
       });
-    });
+    } else {
+      this.filteredData = this.items;
+    }
   }
 }

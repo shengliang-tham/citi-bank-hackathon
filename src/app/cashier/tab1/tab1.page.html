@@ -29,7 +29,10 @@
       <ion-col size="1"></ion-col>
       <ion-col size="10">
         <ion-row class="searchbar">
-          <ion-searchbar placeholder="Search Merchant"></ion-searchbar>
+          <ion-searchbar
+            placeholder="Search Voucher Code"
+            (ionInput)="handleInput($event)"
+          ></ion-searchbar>
         </ion-row>
         <ion-row>
           <ion-button class="voucher">
