@@ -2,6 +2,14 @@ ion-content {
   --ion-background-color: #ffffff;
 }
 
+ion-button {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  width: 30%;
+  --background: #004685;
+}
+
 .location-card {
   height: 80%;
   width: 100%;
