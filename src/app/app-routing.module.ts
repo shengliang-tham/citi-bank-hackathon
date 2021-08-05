@@ -25,9 +25,23 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'purchase',
+    loadChildren: () =>
+      import('./customer/purchase/purchase.module').then(
+        (m) => m.PurchasePageModule
+      ),
+  },
+  {
     path: '',
     redirectTo: 'landing',
     pathMatch: 'full',
+  },
+  {
+    path: 'purchase',
+    loadChildren: () =>
+      import('./customer/purchase/purchase.module').then(
+        (m) => m.PurchasePageModule
+      ),
   },
 ];
 @NgModule({
