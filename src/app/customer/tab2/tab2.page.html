@@ -14,30 +14,55 @@
       ></ion-img>
     </ion-row>
     <ion-row class="citi-header">
-      <p class="header-text">Merchants</p>
+      <p class="header-text">Fila</p>
     </ion-row>
+    <ion-row class="vertical-align-content">
+      <ion-col size="1"></ion-col>
+      <ion-col size="4">
+        <ion-img src="assets/images/merchant-fila.png"></ion-img>
+      </ion-col>
+      <ion-col size="6"
+        ><p class="merchant-details">
+          Fila was created in Biella, Italy, by the Fila brothers in 1909.
+        </p></ion-col
+      >
+      <ion-col size="1"></ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-slides
+        [options]="{ slidesPerView: '3', zoom: true, grabCursor: true }"
+      >
+        <ion-slide
+          *ngFor="let location of locationCards"
+          class="location-slider"
+        >
+          <ion-card class="card-blue location-card">
+            <ion-img src="{{location.imgUrl}}"></ion-img>
+            <p class="location-card-text">{{location.title}}</p>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+    </ion-row>
+    <hr />
+
     <ion-row>
       <ion-col size="1"></ion-col>
-      <ion-col size="10">
-        <ion-row class="searchbar">
-          <ion-searchbar
-            placeholder="Search Merchant"
-            (ionInput)="handleInput($event)"
-          ></ion-searchbar>
-        </ion-row>
-        <ion-row></ion-row>
-        <ion-row>
-          <ion-col size="6" *ngFor="let merchant of filteredMerchants">
-            <ion-button class="merchant">
-              <ion-img
-                class="merchant-logo"
-                src="{{merchant.pictureUrl}}"
-              ></ion-img>
-            </ion-button>
-          </ion-col>
-        </ion-row>
+      <ion-col size="7" style="background-color: #004685"
+        ><p class="vouchers-header-text">Vouchers</p></ion-col
+      >
+    </ion-row>
+    <ion-row>
+      <ion-col size="6" *ngFor="let vouch of voucherCards">
+        <ion-card class="card-voucher" (click)="presentModal()">
+          <ion-img src="{{vouch.imgUrl}}"> </ion-img>
+          <p class="voucher-card-text">
+            {{vouch.title}} [{{vouch.points}} pts]
+          </p>
+          <hr class="hr-card" />
+          <p class="voucher-card-expiry">Expires {{vouch.expiryDate}}</p>
+        </ion-card>
       </ion-col>
-      <ion-col size="1"></ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>

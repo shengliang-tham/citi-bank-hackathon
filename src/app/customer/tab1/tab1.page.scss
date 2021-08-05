@@ -1,0 +1,74 @@
+// ion-content {
+//   --ion-background-color: #ffffff;
+// }
+
+.profile-section {
+  height: 25%;
+  background-color: #73b5f0;
+  padding-top: 30px;
+}
+
+.recent-trans-section {
+  background-color: white;
+}
+
+.center-content {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.voucher-button {
+  --background: #ffffff;
+  color: #004685;
+  width: 120px;
+}
+
+.logout-button {
+  color: white;
+  --background: #004685;
+  width: 120px;
+}
+
+ion-avatar {
+  width: 180px;
+  height: 180px;
+}
+
+.recent-trans-text {
+  color: white;
+  font-weight: bolder;
+  margin-left: 20px;
+  font-size: 1.2rem;
+}
+
+.card-trans-img {
+  width: 128px;
+  height: 128px;
+  float: left;
+}
+
+.card-blue-trans-text {
+  color: white;
+  font-weight: 700;
+  margin-left: 180px;
+}
+
+.card-white-trans-text {
+  color: black;
+  font-weight: 700;
+  margin-left: 180px;
+}
+
+.card-blue {
+  background-color: #73b5f0;
+  box-shadow: -1px 2px 4px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 20px 20px 20px 20px;
+}
+
+.card-white {
+  background-color: white;
+  box-shadow: -1px 2px 4px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 20px 20px 20px 20px;
+}

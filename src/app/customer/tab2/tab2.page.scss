@@ -2,20 +2,19 @@ ion-content {
   --ion-background-color: #ffffff;
 }
 
-ion-searchbar {
-  --color: #000000;
-  --placeholder-color: #b3b3b3;
-}
-
-ion-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.location-card {
+  height: 80%;
+  width: 100%;
 }
 
 .citi-logo-header {
   width: 30%;
   height: 30%;
+}
+
+.merchant-logo {
+  width: 200px;
+  height: 67.5px;
 }
 
 .header-text {
@@ -32,24 +31,68 @@ ion-row {
   justify-content: center;
 }
 
-.searchbar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.merchant-details {
+  color: black;
+  font-weight: 700;
 }
 
-.merchant {
-  width: 95%;
-  height: 140px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  --background: #73b5f0;
-  --box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  --border-radius: 18px;
-  margin: 20px auto 10px auto;
+.vertical-align-content > * {
+  display: flex !important;
+  align-content: center !important;
+  align-items: center !important;
 }
 
-.merchant-logo {
-  width: 70%;
+.location-slider {
+  width: 150px;
+  height: 200px;
+  border-radius: 20px 20px 20px 20px;
+}
+
+.card-blue {
+  background-color: #73b5f0;
+  border-radius: 20px 20px 20px 20px;
+}
+
+.location-card-text {
+  color: white;
+  margin-left: 2px;
+  font-weight: 500;
+}
+
+.vouchers-header-text {
+  color: white;
+  font-weight: bolder;
+  margin-left: 20px;
+  font-size: 1rem;
+}
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid black;
+}
+
+.hr-card {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  width: 80%;
+  border-top: 1px solid #004685;
+}
+
+.card-voucher {
+  background-color: #73b5f0;
+  border-radius: 20px 20px 20px 20px;
+}
+.voucher-card-text {
+  color: white;
+  margin-left: 10px;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.voucher-card-expiry {
+  color: #004685;
+  margin-left: 10px;
 }

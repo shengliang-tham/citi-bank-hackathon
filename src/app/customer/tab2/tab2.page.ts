@@ -1,5 +1,21 @@
+/* eslint-disable @typescript-eslint/member-ordering */
 import { Component } from '@angular/core';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
+import { ModalController } from '@ionic/angular';
+import { QrCodePage } from './tab2-qr/qr-code.page';
+
+interface Voucher {
+  title: string;
+  points: number;
+  imgUrl: string;
+  qrCode: string;
+  expiryDate: string;
+}
+
+interface Location {
+  title: string;
+  imgUrl: string;
+}
 
 @Component({
   selector: 'app-tab2',
@@ -7,59 +23,59 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
   styleUrls: ['tab2.page.scss'],
 })
 export class Tab2Page {
-  merchants: any[];
-  filteredMerchants: any[];
+  constructor(public modalController: ModalController) {}
 
-  constructor() {}
+  locationCards: Location[] = [
+    {
+      title: 'IMM #02-01',
+      imgUrl: 'assets/images/merchant-fila-imm-outlet.jpeg',
+    },
+    {
+      title: 'ION Orchard #B1-28',
+      imgUrl: 'assets/images/merchant-fila-imm-outlet.jpeg',
+    },
+    {
+      title: 'Suntec City #01-413',
+      imgUrl: 'assets/images/merchant-fila-imm-outlet.jpeg',
+    },
+  ];
+  voucherCards: Voucher[] = [
+    {
+      title: '15% Off first purchase',
+      points: 10,
+      imgUrl: 'assets/images/merchant-fila-imm-outlet.jpeg',
+      qrCode: 'temp',
+      expiryDate: '2020-10-08',
+    },
+    {
+      title: '30% Off first purchase',
+      points: 20,
+      imgUrl: 'assets/images/merchant-fila-imm-outlet.jpeg',
+      qrCode: 'temp',
+      expiryDate: '2020-11-08',
+    },
+    {
+      title: '40% Off second purchase',
+      points: 40,
+      imgUrl: 'assets/images/merchant-fila-imm-outlet.jpeg',
+      qrCode: 'temp',
+      expiryDate: '2020-12-08',
+    },
+  ];
 
-  ionViewWillEnter() {
-    this.merchants = [
-      {
-        brandName: 'SPAO',
-        pictureUrl:
-          'https://res.cloudinary.com/dwtlyky3v/image/upload/v1628091330/citi-bank-hackathon/spao_1_user_search_dpoyc9.png',
-      },
-      {
-        brandName: 'SPAO',
-        pictureUrl:
-          'https://res.cloudinary.com/dwtlyky3v/image/upload/v1628091330/citi-bank-hackathon/spao_1_user_search_dpoyc9.png',
-      },
-      {
-        brandName: 'SPAO',
-        pictureUrl:
-          'https://res.cloudinary.com/dwtlyky3v/image/upload/v1628091330/citi-bank-hackathon/spao_1_user_search_dpoyc9.png',
-      },
-      {
-        brandName: 'SPAO',
-        pictureUrl:
-          'https://res.cloudinary.com/dwtlyky3v/image/upload/v1628091330/citi-bank-hackathon/spao_1_user_search_dpoyc9.png',
-      },
-    ];
+  slideOpt = {
+    direction: 'horizontal',
+    slidesPerView: 2,
+    pagination: {
+      el: '.swiper-pagination',
+    },
+  };
 
-    this.filteredMerchants = this.merchants;
-  }
-
-  handleInput(event) {
-    const query = event.target.value.toUpperCase();
-
-    console.log(query);
-
-    if (query !== '') {
-      this.filteredMerchants = [];
-      requestAnimationFrame(() => {
-        this.merchants.forEach((merchant) => {
-          const shouldShow = merchant.brandName.indexOf(query) > -1;
-
-          if (shouldShow) {
-            // const index = merchant.brandName.indexOf(query);
-            // console.log(index);
-            this.filteredMerchants.push(merchant);
-          }
-        });
-      });
-    } else {
-      this.filteredMerchants = this.merchants;
-    }
-    console.log(this.filteredMerchants);
+  async presentModal() {
+    const modal = await this.modalController.create({
+      component: QrCodePage,
+      cssClass: 'small-modal',
+    });
+    return await modal.present();
   }
 }
