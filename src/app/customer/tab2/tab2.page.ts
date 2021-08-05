@@ -75,10 +75,9 @@ export class Tab2Page {
     console.log(voucher);
     const modal = await this.modalController.create({
       component: QrCodePage,
-      componentProps: {
-        foo: 'hello',
-        bar: 'world',
-      },
+      // componentProps: {
+      //   voucher,
+      // },
       cssClass: 'small-modal',
     });
     return await modal.present();

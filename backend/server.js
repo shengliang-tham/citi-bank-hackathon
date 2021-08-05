@@ -31,18 +31,11 @@ app.listen(port, () => {
     })
 
     app.post('/redeem-voucher', async (req, res) => {
-      const merchantId = req.body.merchantId ? req.body.merchantId : null
-      const voucherName = req.body.voucherName ? req.body.voucherName : null
-
-      if (merchantId == null || voucherName == null) {
-        res.json({ error: "params are null" })
-      } else {
-        await db.collection('users').updateOne({ brandName: "FILA", "vouchers.voucherName": voucherName }, { $inc: { "vouchers.$.totalRemaining": -1, } })
-        await db.collection('users').updateOne({ "type": "customer" }, { $inc: { loyaltyPoints: 100 } })
-        res.json({
-          success: true
-        })
-      }
+      await db.collection('users').updateOne({ brandName: "FILA", "vouchers.voucherCode": req.body.voucherCode }, { $inc: { "vouchers.$.totalRemaining": -1, } })
+      await db.collection('users').updateOne({ "type": "customer" }, { $inc: { loyaltyPoints: req.body.loyaltyPoints } })
+      res.json({
+        success: true
+      })
     })
 
     app.get('/reset', async (req, res) => {
