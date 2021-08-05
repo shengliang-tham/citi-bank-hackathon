@@ -15,8 +15,8 @@ export class User {
   providedIn: 'root',
 })
 export class AllServicesService {
-  endpoint = 'http://localhost:3000/';
-
+  // endpoint = 'http://localhost:3000/';
+  endpoint = "https://citi-bank-hackathon.loca.lt/";
   brandName = 'FILA';
 
   httpOptions = {
@@ -30,6 +30,15 @@ export class AllServicesService {
       .get<any[]>(this.endpoint + 'retrieve-merchants')
       .pipe(
         tap((merchants) => console.log('Merchants retrieved!')),
+        catchError(this.handleError<any[]>('Get merchant', []))
+      );
+  }
+
+  redeemVoucher(detailObject): Observable<any> {
+    return this.httpClient
+      .post<any>(this.endpoint + 'redeem-voucher', detailObject)
+      .pipe(
+        tap((merchants) => console.log('Voucher redeemd!')),
         catchError(this.handleError<any[]>('Get merchant', []))
       );
   }
