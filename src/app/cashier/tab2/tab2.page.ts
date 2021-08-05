@@ -32,11 +32,11 @@ export class Tab2Page {
         alert('Barcode data ' + JSON.stringify(barcodeData));
         this.scannedData = barcodeData;
 
-        const tempObject = {
-          merchantId: '610ac73a668ee57652a8af78',
-          voucherName: 'National Day 15% Off',
-        };
-        this.allServices.redeemVoucher(tempObject).subscribe((data) => {
+        // const tempObject = {
+        //   merchantId: '610ac73a668ee57652a8af78',
+        //   voucherName: 'National Day 15% Off',
+        // };
+        this.allServices.redeemVoucher(this.scannedData).subscribe((data) => {
           console.log();
 
           this.presentToast();
