@@ -10,6 +10,19 @@ ion-button {
   --background: #004685;
 }
 
+h2 {
+  background-color: #004685;
+  font-family: Poppins;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 30px;
+  color: #ffffff;
+  padding: 5px 15px 1px 15px;
+  border-radius: 5px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.160784);
+  margin-left: 15px;
+}
+
 .location-card {
   height: 80%;
   width: 100%;
@@ -67,13 +80,6 @@ ion-button {
   font-weight: 500;
 }
 
-.vouchers-header-text {
-  color: white;
-  font-weight: bolder;
-  margin-left: 20px;
-  font-size: 1rem;
-}
-
 hr {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -96,13 +102,15 @@ hr {
 .voucher-card-text {
   color: white;
   margin-left: 10px;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 1rem;
+  font-family: Poppins;
 }
 
 .voucher-card-expiry {
   color: #004685;
   margin-left: 10px;
+  font-family: Poppins;
 }
 
 .card-img {

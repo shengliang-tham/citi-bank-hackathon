@@ -38,7 +38,11 @@
           <ion-button class="voucher">
             <ion-icon name="add-outline"></ion-icon>
           </ion-button>
-          <ion-button class="voucher" *ngFor="let item of filteredData">
+          <ion-button
+            class="voucher"
+            *ngFor="let item of filteredData"
+            (click)="presentModal()"
+          >
             <p class="voucher-code">{{item}}</p>
           </ion-button>
         </ion-row>

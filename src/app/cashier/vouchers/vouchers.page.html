@@ -25,6 +25,7 @@
           [ngClass]="{'voucher-blue': i % 2 === 0, 'voucher-white' : i % 2 !== 0}"
           button
           class="voucher voucher-blue"
+          (click)="presentModal()"
         >
           <ion-card-title>{{voucher.voucherName}}</ion-card-title>
           <ion-card-subtitle>

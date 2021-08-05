@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { ViewWillEnter } from '@ionic/angular';
+import { ModalController, ViewWillEnter } from '@ionic/angular';
 import { AllServicesService } from 'src/app/services/all-services.service';
+import { VoucherDetailsPage } from '../voucher-details/voucher-details.page';
 
 @Component({
   selector: 'app-vouchers',
@@ -10,7 +11,10 @@ import { AllServicesService } from 'src/app/services/all-services.service';
 export class VouchersPage implements ViewWillEnter {
   vouchers: any[];
 
-  constructor(private _service: AllServicesService) {}
+  constructor(
+    private _service: AllServicesService,
+    private modalController: ModalController
+  ) {}
 
   ionViewWillEnter() {
     this._service.getMerchants().subscribe((response) => {
@@ -48,5 +52,12 @@ export class VouchersPage implements ViewWillEnter {
     // ];
   }
 
-  alternateColor(event) {}
+  async presentModal() {
+    console.log('Hello');
+    const modal = await this.modalController.create({
+      component: VoucherDetailsPage,
+      cssClass: 'small-modal',
+    });
+    return await modal.present();
+  }
 }

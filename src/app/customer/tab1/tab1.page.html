@@ -1,3 +1,10 @@
+<ion-header>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+</ion-header>
+
 <ion-content [fullscreen]="true">
   <div class="profile-section">
     <ion-row class="center-content">
@@ -17,12 +24,9 @@
   </div>
   <div class="recent-trans-section">
     <ion-row style="padding-top: 100px">
-      <ion-col size="1"></ion-col>
-      <ion-col size="7" style="background-color: #004685"
-        ><p class="recent-trans-text">Recent Transactions</p></ion-col
-      >
+      <h2>Recent Transactions</h2>
     </ion-row>
-    <div style="padding-top: 20px">
+    <div>
       <ion-row>
         <ion-col size="12" *ngFor="let trans of transactionList; let i = index">
           <ion-card
