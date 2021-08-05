@@ -1,25 +1,98 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title> Merchants </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <!-- <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Merchants</ion-title>
-    </ion-toolbar>
-  </ion-header> -->
-
-  <ion-item>
-    <ion-label>
-      <ion-img
-        width="40"
-        height="40"
-        src="assets/images/lazada-icon.jpg"
-      ></ion-img>
-    </ion-label>
-  </ion-item>
-
-  <!-- <app-explore-container name="Tab 1 page"></app-explore-container> -->
+  <div class="profile-section">
+    <ion-row class="center-content">
+      <ion-col>
+        <ion-button shape="round" class="voucher-button">Vouchers</ion-button>
+      </ion-col>
+      <ion-col>
+        <p style="font-weight: bold; font-size: larger">Profile</p>
+      </ion-col>
+      <ion-col>
+        <ion-button shape="round" class="logout-button">Logout</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="center-content">
+      <ion-avatar>
+        <img
+          src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y"
+        />
+      </ion-avatar>
+    </ion-row>
+  </div>
+  <div class="recent-trans-section">
+    <ion-row style="padding-top: 100px">
+      <ion-col size="1"></ion-col>
+      <ion-col size="7" style="background-color: #004685"
+        ><p class="recent-trans-text">Recent Transactions</p></ion-col
+      >
+    </ion-row>
+    <div style="padding-top: 20px">
+      <ion-row>
+        <ion-col size="12">
+          <ion-card class="card-blue">
+            <ion-card-content>
+              <ion-img
+                class="card-trans-img"
+                src="assets/images/merchant-fila.png"
+              ></ion-img>
+              <div style="margin-top: 10px">
+                <p class="card-blue-trans-text">National Day 15% Off</p>
+                <br />
+                <p class="card-blue-trans-text">Redeemed:</p>
+                <p class="card-blue-trans-text">IMM, 3/8/21 03:43 PM</p>
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="12">
+          <ion-card class="card-white">
+            <ion-card-content>
+              <ion-img
+                class="card-trans-img"
+                src="assets/images/merchant-fila.png"
+              ></ion-img>
+              <div style="margin-top: 10px">
+                <p class="card-white-trans-text">National Day 15% Off</p>
+                <br />
+                <p class="card-white-trans-text">Redeemed:</p>
+                <p class="card-white-trans-text">IMM, 3/8/21 03:43 PM</p>
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="12">
+          <ion-card class="card-white">
+            <ion-card-content>
+              <ion-img
+                class="card-trans-img"
+                src="assets/images/merchant-fila.png"
+              ></ion-img>
+              <div style="margin-top: 10px">
+                <p class="card-white-trans-text">National Day 15% Off</p>
+                <br />
+                <p class="card-white-trans-text">Redeemed:</p>
+                <p class="card-white-trans-text">IMM, 3/8/21 03:43 PM</p>
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="12">
+          <ion-card class="card-white">
+            <ion-card-content>
+              <ion-img
+                class="card-trans-img"
+                src="assets/images/merchant-fila.png"
+              ></ion-img>
+              <div style="margin-top: 10px">
+                <p class="card-white-trans-text">National Day 15% Off</p>
+                <br />
+                <p class="card-white-trans-text">Redeemed:</p>
+                <p class="card-white-trans-text">IMM, 3/8/21 03:43 PM</p>
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
 </ion-content>

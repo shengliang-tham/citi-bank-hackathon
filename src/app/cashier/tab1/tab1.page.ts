@@ -1,43 +1,60 @@
-import { Component } from '@angular/core';
-import { IonItemSliding } from '@ionic/angular';
+import { Component, OnInit } from '@angular/core';
+import { ViewWillEnter } from '@ionic/angular';
+import { AllServicesService } from '../../services/all-services.service';
 
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss'],
 })
-export class Tab1Page {
+export class Tab1Page implements OnInit, ViewWillEnter {
   items: string[];
   filteredData: string[];
 
-  constructor() {}
+  constructor(private _service: AllServicesService) {}
+
+  brandName = '';
+
+  ngOnInit() {
+    this.brandName = this._service.brandName;
+  }
 
   ionViewWillEnter() {
-    const searchbar = document.querySelector('ion-searchbar');
-    this.items = ['ndp15', 'scp30', 'ndp30', 'ndwnd', 'nend'];
     this.filteredData = this.items;
-    console.log(this.items);
-    console.log(this.filteredData);
+    this._service.getMerchants().subscribe((response) => {
+      this.items = [];
+      let list = response;
+      for (let i = 0; i < list.length; i++) {
+        if (list[i].brandName === this.brandName) {
+          for (let voucher of list[i].vouchers)
+            this.items.push(voucher.voucherCode);
+        }
+      }
+      this.filteredData = this.items;
+    });
 
-    searchbar.addEventListener('ionInput', this.handleInput);
+    // searchbar.addEventListener('ionInput', this.handleInput);
   }
 
   handleInput(event) {
-    console.log(event);
-    this.filteredData = this.items;
-    const query = event.target.value.toLowerCase();
+    const query = event.target.value.toUpperCase();
+    // console.log(query);
 
-    console.log(this.items);
+    if (query !== '') {
+      this.filteredData = [];
+      requestAnimationFrame(() => {
+        this.items.forEach((item) => {
+          const shouldShow = item.indexOf(query) > -1;
 
-    requestAnimationFrame(() => {
-      this.items.forEach((item) => {
-        const shouldShow = item.indexOf(query) > -1;
-
-        if (!shouldShow) {
-          const index = item.indexOf(query);
-          this.filteredData.splice(index, 1);
-        }
+          if (shouldShow) {
+            // const index = item.indexOf(query);
+            // console.log(index);
+            this.filteredData.push(item);
+          }
+        });
       });
-    });
+    } else {
+      this.filteredData = this.items;
+    }
   }
 }

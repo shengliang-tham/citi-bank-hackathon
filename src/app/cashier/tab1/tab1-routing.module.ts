@@ -7,11 +7,6 @@ const routes: Routes = [
     path: '',
     component: Tab1Page,
   },
-  {
-    path: 'vouchers',
-    loadChildren: () =>
-      import('../vouchers/vouchers.module').then((m) => m.VouchersPageModule),
-  },
 ];
 
 @NgModule({
