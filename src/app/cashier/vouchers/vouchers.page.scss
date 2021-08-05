@@ -11,11 +11,10 @@ ion-card-subtitle {
 
 ion-card-title {
   padding-top: 15px;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
 }
 
 ion-card-subtitle {
-  font-size: 16px;
   padding-bottom: 15px;
 }
 
@@ -71,12 +70,12 @@ h2 {
   --background: white;
 }
 
-.voucher-blue ion-card-subtitle,
-.voucher-blue ion-card-title {
+.voucher-blue ion-card-title,
+.voucher-blue ion-card-subtitle {
   color: white;
 }
 
-.voucher-white ion-card-subtitle,
-.voucher-white ion-card-title {
+.voucher-white ion-card-title,
+.voucher-white ion-card-subtitle {
   color: black;
 }
