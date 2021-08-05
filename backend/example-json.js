@@ -13,18 +13,24 @@ exports.array = [
       {
         "voucherName": "National Day 15% Off",
         "voucherCode": "NDP15",
+        "redemptionDate": "3/8/21 03:43PM",
+        "redemptionLocation": "IMM",
         "totalCount": 150,
         "totalRemaining": 150
       },
       {
         "voucherName": "Mango Day 15% Off",
         "voucherCode": "MNG15",
+        "redemptionDate": "3/8/21 03:43PM",
+        "redemptionLocation": "IMM",
         "totalCount": 150,
         "totalRemaining": 150
       },
       {
         "voucherName": "Ladies Day 15% Off",
         "voucherCode": "LD15",
+        "redemptionDate": "3/8/21 03:43PM",
+        "redemptionLocation": "IMM",
         "totalCount": 150,
         "totalRemaining": 150
       }
@@ -63,11 +69,15 @@ exports.array = [
         "voucherName": "National Day 15% Off",
         "voucherCode": "NDP15",
         "totalCount": 150,
+        "redemptionDate": "3/8/21 03:43PM",
+        "redemptionLocation": "IMM",
         "totalRemaining": 150
       },
       {
         "voucherName": "Mango Day 15% Off",
         "voucherCode": "MNG15",
+        "redemptionDate": "3/8/21 03:43PM",
+        "redemptionLocation": "IMM",
         "totalCount": 150,
         "totalRemaining": 150
       },
@@ -75,6 +85,8 @@ exports.array = [
         "voucherName": "Ladies Day 15% Off",
         "voucherCode": "LD15",
         "totalCount": 150,
+        "redemptionDate": "3/8/21 03:43PM",
+        "redemptionLocation": "IMM",
         "totalRemaining": 150
       }
     ]
