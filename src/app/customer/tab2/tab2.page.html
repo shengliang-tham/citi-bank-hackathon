@@ -53,14 +53,20 @@
       >
     </ion-row>
     <ion-row>
-      <ion-col size="6" *ngFor="let vouch of voucherCards">
+      <ion-col size="12" *ngFor="let vouch of voucherCards">
         <ion-card class="card-voucher" (click)="presentModal()">
-          <ion-img src="{{vouch.imgUrl}}"> </ion-img>
-          <p class="voucher-card-text">
-            {{vouch.title}} [{{vouch.points}} pts]
-          </p>
-          <hr class="hr-card" />
-          <p class="voucher-card-expiry">Expires {{vouch.expiryDate}}</p>
+          <ion-row>
+            <ion-col size="4" class="citi-header">
+              <ion-img class="card-img" src="{{pictureUrl}}"> </ion-img>
+            </ion-col>
+            <ion-col size="8">
+              <p class="voucher-card-text">{{vouch.title}}</p>
+              <p class="voucher-card-expiry">
+                {{vouch.points}} points <br />
+                Expires {{vouch.expiryDate}}
+              </p>
+            </ion-col>
+          </ion-row>
         </ion-card>
       </ion-col>
     </ion-row>
