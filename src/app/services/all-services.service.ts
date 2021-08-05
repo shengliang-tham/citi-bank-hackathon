@@ -16,7 +16,7 @@ export class User {
 })
 export class AllServicesService {
   // endpoint = 'http://localhost:3000/';
-  endpoint = "https://citi-bank-hackathon.loca.lt/";
+  endpoint = 'https://citi-bank-hackathon.loca.lt/';
   brandName = 'FILA';
 
   httpOptions = {
