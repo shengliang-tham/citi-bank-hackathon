@@ -43,6 +43,13 @@ const routes: Routes = [
         (m) => m.PurchasePageModule
       ),
   },
+  {
+    path: 'details',
+    loadChildren: () =>
+      import('./customer/tab2/tab2-details/tab2.module').then(
+        (m) => m.Tab2Module
+      ),
+  },
 ];
 @NgModule({
   imports: [

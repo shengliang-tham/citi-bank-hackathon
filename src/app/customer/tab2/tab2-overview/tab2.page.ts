@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
+import { AllServicesService } from 'src/app/services/all-services.service';
 
 @Component({
   selector: 'app-tab2',
@@ -10,33 +12,24 @@ export class Tab2OverviewPage {
   merchants: any[];
   filteredMerchants: any[];
 
-  constructor() {}
+  constructor(private router: Router, private _service: AllServicesService) {}
 
   ionViewWillEnter() {
-    this.merchants = [
-      {
-        brandName: 'SPAO',
-        pictureUrl:
-          'https://res.cloudinary.com/dwtlyky3v/image/upload/v1628091330/citi-bank-hackathon/spao_1_user_search_dpoyc9.png',
-      },
-      {
-        brandName: 'SPAO',
-        pictureUrl:
-          'https://res.cloudinary.com/dwtlyky3v/image/upload/v1628091330/citi-bank-hackathon/spao_1_user_search_dpoyc9.png',
-      },
-      {
-        brandName: 'SPAO',
-        pictureUrl:
-          'https://res.cloudinary.com/dwtlyky3v/image/upload/v1628091330/citi-bank-hackathon/spao_1_user_search_dpoyc9.png',
-      },
-      {
-        brandName: 'SPAO',
-        pictureUrl:
-          'https://res.cloudinary.com/dwtlyky3v/image/upload/v1628091330/citi-bank-hackathon/spao_1_user_search_dpoyc9.png',
-      },
-    ];
+    this._service.getMerchants().subscribe((response) => {
+      this.merchants = [];
+      let list = response;
+      for (let i = 0; i < list.length; i++) {
+        this.merchants.push({
+          brandName: list[i].brandName,
+          pictureUrl: list[i].pictureUrl,
+        });
+      }
+      this.filteredMerchants = this.merchants;
+    });
+  }
 
-    this.filteredMerchants = this.merchants;
+  merchantSelected(m) {
+    this.router.navigate(['/details']);
   }
 
   handleInput(event) {
