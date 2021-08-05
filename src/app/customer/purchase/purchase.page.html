@@ -12,7 +12,7 @@
         class="citi-logo-header"
         src="assets/images/citi_blue-logo.png"
       ></ion-img>
-      <ion-card>
+      <ion-card class="points-card">
         <ion-card-title>100</ion-card-title>
         <ion-card-subtitle>Points</ion-card-subtitle>
       </ion-card>
@@ -24,16 +24,50 @@
       <h2>Vouchers for Purchase</h2>
     </ion-row>
     <ion-row>
-      <ion-col size="12">
-        <ion-card class="card-voucher">
-          <ion-row>
-            <ion-col size="4" class="citi-header">
-              <ion-img class="card-img" src="../../assets/"> </ion-img>
-            </ion-col>
-            <ion-col size="8">
-              <p class="voucher-card-text">Name</p>
-            </ion-col>
-          </ion-row>
+      <ion-col size="6" class="vouchers">
+        <ion-card class="card-blue location-card" (click)="presentModal()">
+          <ion-img
+            class="card-img"
+            src="../../../assets/images/fila-logo.png"
+          ></ion-img>
+          <hr />
+          <p class="location-card-title">NDP15</p>
+          <p class="location-card-text">Price: $30.00</p>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6" class="vouchers">
+        <ion-card class="card-blue location-card" (click)="presentModal()">
+          <ion-img
+            class="card-img"
+            src="../../../assets/images/fila-logo.png"
+          ></ion-img>
+          <hr />
+          <p class="location-card-title">NDP15</p>
+          <p class="location-card-text">Price: $30.00</p>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6" class="vouchers">
+        <ion-card class="card-blue location-card" (click)="presentModal()">
+          <ion-img
+            class="card-img"
+            src="../../../assets/images/fila-logo.png"
+          ></ion-img>
+          <hr />
+          <p class="location-card-title">NDP15</p>
+          <p class="location-card-text">Price: $30.00</p>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6" class="vouchers">
+        <ion-card class="card-blue location-card" (click)="presentModal()">
+          <ion-img
+            class="card-img"
+            src="../../../assets/images/fila-logo.png"
+          ></ion-img>
+          <hr />
+          <p class="location-card-title">NDP15</p>
+          <p class="location-card-text">Price: $30.00</p>
         </ion-card>
       </ion-col>
     </ion-row>

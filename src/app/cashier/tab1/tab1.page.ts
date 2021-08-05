@@ -1,6 +1,9 @@
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable @typescript-eslint/prefer-for-of */
 import { Component, OnInit } from '@angular/core';
-import { ViewWillEnter } from '@ionic/angular';
+import { ModalController, ViewWillEnter } from '@ionic/angular';
 import { AllServicesService } from '../../services/all-services.service';
+import { VoucherDetailsPage } from '../voucher-details/voucher-details.page';
 
 @Component({
   selector: 'app-tab1',
@@ -11,8 +14,12 @@ export class Tab1Page implements OnInit, ViewWillEnter {
   items: string[];
   filteredData: string[];
 
-  constructor(private _service: AllServicesService) {}
+  constructor(
+    private _service: AllServicesService,
+    private modalController: ModalController
+  ) {}
 
+  // eslint-disable-next-line @typescript-eslint/member-ordering
   brandName = '';
 
   ngOnInit() {
@@ -56,5 +63,14 @@ export class Tab1Page implements OnInit, ViewWillEnter {
     } else {
       this.filteredData = this.items;
     }
+  }
+
+  async presentModal() {
+    console.log('Hello');
+    const modal = await this.modalController.create({
+      component: VoucherDetailsPage,
+      cssClass: 'small-modal',
+    });
+    return await modal.present();
   }
 }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ModalController, ViewWillEnter } from '@ionic/angular';
 import { AllServicesService } from 'src/app/services/all-services.service';
+import { PurchaseModalPage } from '../purchase/purchase-modal/purchase-modal.page';
 
 interface Voucher {
   title: string;
@@ -20,4 +21,12 @@ export class PurchasePage {
     public modalController: ModalController,
     public _service: AllServicesService
   ) {}
+
+  async presentModal() {
+    const modal = await this.modalController.create({
+      component: PurchaseModalPage,
+      cssClass: 'small-modal',
+    });
+    return await modal.present();
+  }
 }
