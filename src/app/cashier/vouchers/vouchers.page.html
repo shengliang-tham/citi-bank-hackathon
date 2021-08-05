@@ -1,8 +1,11 @@
 <ion-header>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
-    rel="stylesheet"
-  />
+  <ion-toolbar>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <ion-title>Vouchers</ion-title>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content>
@@ -20,34 +23,17 @@
       <h2>Vouchers Count</h2>
     </ion-row>
     <ion-grid>
-      <ion-row>
-        <ion-card class="voucher voucher-blue">
-          <ion-card-title>National Day 15% Off</ion-card-title>
-          <ion-card-subtitle
-            >No. Redeemed: <span>250</span> &nbsp;&nbsp;&nbsp; No. Remaining:
-            <span>78</span></ion-card-subtitle
-          >
-        </ion-card>
-        <ion-card class="voucher voucher-white">
-          <ion-card-title>National Day 15% Off</ion-card-title>
-          <ion-card-subtitle
-            >No. Redeemed: <span>250</span>&nbsp;&nbsp;&nbsp; No. Remaining:
-            <span>78</span></ion-card-subtitle
-          >
-        </ion-card>
-        <ion-card class="voucher voucher-blue">
-          <ion-card-title>National Day 15% Off</ion-card-title>
-          <ion-card-subtitle
-            >No. Redeemed: <span>250</span>&nbsp;&nbsp;&nbsp; No. Remaining:
-            <span>78</span></ion-card-subtitle
-          >
-        </ion-card>
-        <ion-card class="voucher voucher-white">
-          <ion-card-title>National Day 15% Off</ion-card-title>
-          <ion-card-subtitle
-            >No. Redeemed: <span>250</span>&nbsp;&nbsp;&nbsp; No. Remaining:
-            <span>78</span></ion-card-subtitle
-          >
+      <ion-row *ngFor="let voucher of vouchers; let i = index">
+        <ion-card
+          [ngClass]="{'voucher-blue': i % 2 === 0, 'voucher-white' : i % 2 !== 0}"
+          button
+          class="voucher voucher-blue"
+        >
+          <ion-card-title>{{voucher.voucherName}}</ion-card-title>
+          <ion-card-subtitle>
+            No. Redeemed: <span>{{voucher.totalCount}}</span> &nbsp;&nbsp;&nbsp;
+            No. Remaining: <span>{{voucher.totalRemaining}}</span>
+          </ion-card-subtitle>
         </ion-card>
       </ion-row>
     </ion-grid>
