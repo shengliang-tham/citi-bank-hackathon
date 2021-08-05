@@ -39,6 +39,7 @@ export class Tab2Page {
         this.allServices.redeemVoucher(this.scannedData).subscribe((data) => {
           console.log();
 
+          alert(data);
           this.presentToast();
         });
       })
