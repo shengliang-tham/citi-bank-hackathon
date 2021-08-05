@@ -1,12 +1,15 @@
 const express = require('express')
 const { MongoClient, ObjectId } = require('mongodb');
 const app = express()
+const cors = require('cors')
 const port = 3000
 
 const uri = "mongodb+srv://user:oVJNxwi0HugFFlis@development.pxu7b.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const testData = require('./example-json').array
+
+app.use(cors())
 app.use(express.json())
 
 
